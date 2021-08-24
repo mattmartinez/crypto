@@ -1,4 +1,8 @@
 #!/usr/bin/python
+# References
+# md5 in python: https://mkyong.com/python/python-md5-hashing-example/
+# md5 differences unix vs python: https://superuser.com/questions/1192917/why-does-my-md5sum-hash-not-match-other-md5s
+
 import sys
 import os
 import hashlib
