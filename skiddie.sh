@@ -19,7 +19,7 @@ KEYS=("A B C D E F G")
 
 # Test each key and replace x in the OP base64_decode (x marks the spot on a map.. ?)
 echo "Testing keys against x character"
-for i in $KEYS; do OP_TEMP=`echo $OP_OBFUSCATED | sed "s/\x/${i}/g"|md5`;
+for i in $KEYS; do OP_TEMP=`echo -ne $OP_OBFUSCATED | sed "s/\x/${i}/g"|md5`;
 echo "Testing ${i}" $OP_TEMP
   if [ "$OP_TEMP" = "$VALID_md5" ]; then
     echo "VALID"
@@ -33,7 +33,7 @@ sleep 2
 
 # Try lower case testing each key and replace x in the OP base64_decode
 echo "Testing keys against x in lowercase"
-for i in $KEYS; do OP_TEMP_LOWER=`echo $OP_OBFUSCATED | sed "s/\x/${i}/g" | tr [:upper:] [:lower:]|md5`;
+for i in $KEYS; do OP_TEMP_LOWER=`echo -ne $OP_OBFUSCATED | sed "s/\x/${i}/g" | tr [:upper:] [:lower:]|md5`;
 echo Testing "${i}" $OP_TEMP_LOWER | tr [:upper:] [:lower:]
   if [ "$OP_TEMP_LOWER" = "$VALID_md5" ]; then
     echo "VALID"
