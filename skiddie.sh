@@ -1,4 +1,9 @@
 #!/bin/bash
+# References
+# mempool reference: https://mempool.emzy.de/de/tx/057954bb28527ff9c7701c6fd2b7f770163718ded09745da56cc95e7606afe99
+# embedding OP_RETURN: https://bitcoindev.network/guides/bitcoinjs-lib/embedding-data-with-op_return/
+# awk: https://www.baeldung.com/linux/bash-remove-first-characters
+
 echo "Your only hint:"
 echo "Treasure map marks the spot"
 echo ""
